@@ -1,5 +1,5 @@
 export const handleCommand = (linesArray, currentCommand) => {
-  switch (linesArray) {
+  switch (currentCommand) {
     case "clear":
       linesArray.splice(0, linesArray.length);
       break;

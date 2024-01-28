@@ -1,7 +1,7 @@
 import styles from "./LinesHolder.module.css";
 import { useRef, useState } from "react";
-import Line from "../Line/Line.jsx";
-import InputLine from "../InputLine/InputLine.jsx";
+import Line from "./Line/Line.jsx";
+import InputLine from "./InputLine/InputLine.jsx";
 
 export const lines = [{ prefix: undefined, command: "sussy" }];
 const LinesHolder = () => {

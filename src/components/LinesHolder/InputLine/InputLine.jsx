@@ -1,7 +1,7 @@
 import styles from "./InputLine.module.css";
-import { lines } from "../LinesHolder/LinesHolder.jsx";
+import { lines } from "../LinesHolder.jsx";
 import { useRef } from "react";
-import { handleCommand } from "../../utils/commandHandler.js";
+import { handleCommand } from "../../../utils/commandHandler.js";
 
 const InputLine = ({ update, line }) => {
   const input = useRef();
