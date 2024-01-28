@@ -1,0 +1,22 @@
+.inputLine {
+  color: #bde3bd;
+  display: flex;
+  text-align: center;
+
+  & > p {
+    margin: 0;
+  }
+
+  & > input {
+    border: none;
+    color: #bde3bd;
+    background-color: transparent;
+    margin-left: 1ex;
+
+    width: max-content;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.line {
+  width: 100%;
+
+  padding: 0;
+}
+
+.inputLine {
+  max-height: 1.5rem;
+  color: #bde3bd;
+  display: flex;
+
+  & > p {
+    margin: 0;
+  }
+
+  & > input {
+    border: none;
+    color: #bde3bd;
+    background-color: transparent;
+    margin-left: 1ex;
+    width: 90%;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.error {
+  color: #d25b5b;
+}
+
+.highlighted {
+  color: #bde3bd;
+}
