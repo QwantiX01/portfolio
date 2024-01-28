@@ -6,15 +6,14 @@ import InputLine from "./InputLine/InputLine.jsx";
 export const lines = [{ prefix: undefined, command: "sussy" }];
 const LinesHolder = () => {
   const [linesArray, setLinesArray] = useState([
-    { prefix: "", command: "Init" },
+    { prefix: undefined, command: "sussy" },
   ]);
   return (
     <>
       <main>
         {linesArray.map((value) => (
-          <Line prefix={value.prefix} content={value.command} />
+          <Line {...value} />
         ))}
-
         <InputLine linesArray={linesArray} setLinesArray={setLinesArray} />
       </main>
     </>

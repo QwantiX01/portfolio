@@ -1,7 +1,7 @@
 import styles from "./Line.module.css";
 
-const Line = ({ content, prefix }) => {
-  let px = "~ ",
+const Line = ({ command, prefix, link = "", linkName = "" }) => {
+  let px = "|",
     pxStyle;
   switch (prefix) {
     case "err":
@@ -15,7 +15,11 @@ const Line = ({ content, prefix }) => {
   return (
     <>
       <p className={styles.line}>
-        <span className={pxStyle}>{px}</span> {content}
+        <span className={pxStyle}>{px}</span>{" "}
+        <a className={styles.link} href={link}>
+          {linkName}
+        </a>{" "}
+        {command}
       </p>
     </>
   );

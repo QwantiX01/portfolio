@@ -12,12 +12,8 @@ const InputLine = ({ linesArray, setLinesArray }) => {
       //Get value from input
       const value = input.current.value;
 
-      //Copy and append new command to current terminal lines
-      let tempLines = [...linesArray];
-      tempLines.push({ command: value });
-
       //Re-render lines and update array
-      setLinesArray(tempLines);
+      setLinesArray([...linesArray].push({ command: value }));
 
       //Clear input
       input.current.value = null;
