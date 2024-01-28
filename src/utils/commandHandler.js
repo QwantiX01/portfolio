@@ -1,17 +1,20 @@
-export const handleCommand = (linesArray, currentCommand) => {
+export const handleCommand = (linesArray, setLinesArray, currentCommand) => {
   switch (currentCommand) {
     case "clear":
-      linesArray.splice(0, linesArray.length);
+      setLinesArray([]);
       break;
     default:
-      error(linesArray, currentCommand);
+      error(linesArray, setLinesArray, currentCommand);
       break;
   }
 };
 
-const error = (linesArray, currentCommand) => {
-  linesArray.push({
+const error = (linesArray, setLinesArray, currentCommand) => {
+  let tempLines = [...linesArray];
+  tempLines.push({
     command: `${currentCommand}: is not gaing hui`,
     prefix: "err",
   });
+
+  setLinesArray(tempLines);
 };

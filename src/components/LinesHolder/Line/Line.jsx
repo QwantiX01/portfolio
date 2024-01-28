@@ -1,7 +1,7 @@
 import styles from "./Line.module.css";
 
 const Line = ({ content, prefix }) => {
-  let px = "~ →",
+  let px = "~ ",
     pxStyle;
   switch (prefix) {
     case "err":

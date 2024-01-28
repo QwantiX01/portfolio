@@ -13,16 +13,16 @@ const InputLine = ({ linesArray, setLinesArray }) => {
       const value = input.current.value;
 
       //Copy and append new command to current terminal lines
-      let arry = [...linesArray];
-      arry.push({ command: value });
+      let tempLines = [...linesArray];
+      tempLines.push({ command: value });
 
       //Re-render lines and update array
-      setLinesArray(arry);
+      setLinesArray(tempLines);
 
       //Clear input
       input.current.value = null;
       //Handle command
-      handleCommand(linesArray, value);
+      handleCommand(linesArray, setLinesArray, value);
     }
   };
   //HTML markup
