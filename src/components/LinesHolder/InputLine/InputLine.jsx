@@ -3,15 +3,26 @@ import { lines } from "../LinesHolder.jsx";
 import { useRef } from "react";
 import { handleCommand } from "../../../utils/commandHandler.js";
 
-const InputLine = ({ update, line }) => {
+const InputLine = ({ linesArray, setLinesArray }) => {
   const input = useRef();
+
+  //Input command handler
   const sendLine = (e) => {
-    const value = input.current.value;
     if (e.key === "Enter") {
-      lines.push({ command: value });
+      //Get value from input
+      const value = input.current.value;
+
+      //Copy and append new command to current terminal lines
+      let arry = [...linesArray];
+      arry.push({ command: value });
+
+      //Re-render lines and update array
+      setLinesArray(arry);
+
+      //Clear input
       input.current.value = null;
-      handleCommand(lines, value);
-      update(line + 1);
+      //Handle command
+      handleCommand(linesArray, value);
     }
   };
   //HTML markup
