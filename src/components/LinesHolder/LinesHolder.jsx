@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Line from "./Line/Line.jsx";
 import InputLine from "./InputLine/InputLine.jsx";
-import { PrintLine } from "../../utils/printLines.js";
 
 const LinesHolder = () => {
   const [linesArray, setLinesArray] = useState([
