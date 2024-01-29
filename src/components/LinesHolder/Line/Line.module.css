@@ -27,14 +27,18 @@
   }
 }
 
-.error {
-  color: #d25b5b;
-}
-
 .link {
   color: #d2ffb9;
 }
 
 .highlighted {
   color: #bde3bd;
+}
+
+.info {
+  color: #dee3ee;
+}
+
+.error {
+  color: #d25b5b;
 }

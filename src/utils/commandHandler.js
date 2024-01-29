@@ -18,7 +18,9 @@ const huiArray = [
 ];
 export const handleCommand = (linesArray, setLinesArray, currentCommand) => {
   const commandArray = currentCommand.split(" ");
+
   const command = commandArray[0];
+
   switch (command) {
     case "clear":
       setLinesArray([]);
@@ -26,7 +28,10 @@ export const handleCommand = (linesArray, setLinesArray, currentCommand) => {
     case "amogus":
       PrintLines(linesArray, setLinesArray, huiArray);
       break;
-    case "links":
+    case "a":
+      PrintLine(linesArray, setLinesArray, { command: "a" });
+      break;
+    case "gh":
       PrintLine(linesArray, setLinesArray, {
         command: " - Youtube link",
         link: "https://youtube.com",

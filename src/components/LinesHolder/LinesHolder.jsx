@@ -1,12 +1,14 @@
-import styles from "./LinesHolder.module.css";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Line from "./Line/Line.jsx";
 import InputLine from "./InputLine/InputLine.jsx";
+import { PrintLine } from "../../utils/printLines.js";
 
-export const lines = [{ prefix: undefined, command: "sussy" }];
 const LinesHolder = () => {
   const [linesArray, setLinesArray] = useState([
-    { prefix: undefined, command: "sussy" },
+    {
+      command: `$: is not registered command!`,
+      prefix: "inf",
+    },
   ]);
   return (
     <>

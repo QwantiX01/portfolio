@@ -1,15 +1,25 @@
 export const PrintLine = (linesArray, setLinesArray, newLine) => {
-  const tempLines = [...linesArray];
-  tempLines.push(newLine);
-
-  setLinesArray(tempLines);
+  let tempArray = [...linesArray];
+  switch (typeof newLine) {
+    case "string":
+      tempArray.push({ command: newLine });
+      break;
+    default:
+      tempArray.push(newLine);
+  }
+  setLinesArray(tempArray);
 };
 
 export const PrintLines = (linesArray, setLinesArray, newLines) => {
-  const tempLines = [...linesArray];
+  let tempArray = [...linesArray];
   newLines.map((value) => {
-    tempLines.push(value);
+    switch (typeof value) {
+      case "string":
+        tempArray.push({ command: value });
+        break;
+      default:
+        tempArray.push(value);
+    }
   });
-
-  setLinesArray(tempLines);
+  setLinesArray(tempArray);
 };
