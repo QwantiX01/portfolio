@@ -8,15 +8,23 @@
   }
 
   & > input {
+    width: 0;
+    height: 0;
     border: none;
     color: #bde3bd;
     background-color: transparent;
     margin-left: 1ex;
 
-    width: max-content;
-
     &:focus {
       outline: none;
     }
   }
+}
+
+.autocomplete {
+  color: #aaa;
+}
+
+.content {
+  display: inline;
 }

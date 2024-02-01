@@ -13,7 +13,7 @@ const LinesHolder = () => {
     <>
       <main>
         {linesArray.map((value) => (
-          <Line {...value} />
+          <Line key={Math.random()} {...value} />
         ))}
         <InputLine linesArray={linesArray} setLinesArray={setLinesArray} />
       </main>

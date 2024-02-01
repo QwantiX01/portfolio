@@ -1,21 +1,18 @@
 import { PrintLine, PrintLines } from "./printLines.js";
 
-const helpArray = ["clear", "  - Clear terminal", "", "help", "  - This menu"];
-const huiArray = [
-  "⠀⠀⠀⠀⠀⠀⠀⣠⣤⣤⣤⣤⣤⣄⡀",
-  "⠀⠀⠀⠀⠀⢰⡿⠋⠁⠀⠀⠈⠉⠙⠻⣷⣄",
-  "⠀⠀⠀⠀⢀⣿⠇⠀⢀⣴⣶⡾⠿⠿⠿⢿⣿⣦⡀",
-  "⠀⠀⣀⣀⣸⡿⠀⠀⢸⣿⣇⠀⠀⠀⠀⠀⠀⠙⣷",
-  "⠀⣾⡟⠛⣿⡇⠀⠀⢸⣿⣿⣷⣤⣤⣤⣤⣶⣶⣿⠇⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀",
-  "⢀⣿⠀⢀⣿⡇⠀⠀⠀⠻⢿⣿⣿⣿⣿⣿⠿⣿⡏⠀⠀⠀⠀⢴⣶⣶⣿⣿⣿⣆",
-  "⢸⣿⠀⢸⣿⡇⠀⠀⠀⠀⠀⠈⠉⠁⠀⠀⠀⣿⡇⣀⣠⣴⣾⣮⣝⠿⠿⠿⣻⡟",
-  "⢸⣿⠀⠘⣿⡇⠀⠀⠀⠀⠀⠀⠀⣠⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠉⠀",
-  "⠸⣿⠀⠀⣿⡇⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠉⠀⠀⠀",
-  "⠀⠻⣷⣶⣿⣇⠀⠀⠀⢠⣼⣿⣿⣿⣿⣿⣿⣿⣛⣛⣻⠉⠁⠀",
-  "⠀⠀⠀⠀⢸⣿⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇",
-  "⠀⠀⠀⠀⢸⣿⣀⣀⣀⣼⡿⢿⣿⣿⣿⣿⣿⡿⣿⣿⡿",
-  "⠀⠀⠀⠀⠀⠙⠛⠛⠛⠋⠁⠀⠙⠻⠿⠟⠋⠑⠛⠋⠀",
+const helpArray = [
+  "Keys:",
+  "Enter: confirm line",
+  "Shift + Enter: confirm autocomplete",
+  "",
+  "Commands:",
+  "clear",
+  "  - Clear terminal",
+  "",
+  "help",
+  "  - This menu",
 ];
+
 export const handleCommand = (linesArray, setLinesArray, currentCommand) => {
   const commandArray = currentCommand.split(" ");
 
@@ -25,8 +22,8 @@ export const handleCommand = (linesArray, setLinesArray, currentCommand) => {
     case "clear":
       setLinesArray([]);
       break;
-    case "amogus":
-      PrintLines(linesArray, setLinesArray, huiArray);
+      // case "amogus":
+      //   PrintLines(linesArray, setLinesArray, huiArray);
       break;
     case "a":
       PrintLine(linesArray, setLinesArray, { command: "a" });
@@ -41,6 +38,8 @@ export const handleCommand = (linesArray, setLinesArray, currentCommand) => {
     case "help":
       PrintLines(linesArray, setLinesArray, helpArray);
       break;
+    // case "settings":
+    //   break;
     default:
       error(linesArray, setLinesArray, currentCommand);
       break;
