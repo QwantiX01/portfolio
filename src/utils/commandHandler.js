@@ -1,4 +1,4 @@
-import { PrintLine, PrintLines } from "./printLines.js";
+import { PrintLines } from "./printLines.js";
 
 const helpArray = [
   "Keys:",
@@ -22,30 +22,29 @@ export const handleCommand = (linesArray, setLinesArray, currentCommand) => {
     case "clear":
       setLinesArray([]);
       break;
-      // case "amogus":
-      //   PrintLines(linesArray, setLinesArray, huiArray);
-      break;
-    case "a":
-      PrintLine(linesArray, setLinesArray, { command: "a" });
-      break;
-    case "gh":
-      PrintLine(linesArray, setLinesArray, {
-        command: " - Youtube link",
-        link: "https://youtube.com",
-        linkName: "YT",
-      });
-      break;
+    // case "amogus":
+    //   PrintLines(linesArray, setLinesArray, huiArray);
+    // break;
+    // case "gh":
+    //   PrintLine(linesArray, setLinesArray, {
+    //     command: " - Youtube link",
+    //     link: "https://youtube.com",
+    //     linkName: "YT",
+    //   });
+    //   break;
     case "help":
       PrintLines(linesArray, setLinesArray, helpArray);
       break;
-    // case "settings":
-    //   break;
+    case "settings":
+      settings(commandArray);
+      break;
     default:
       error(linesArray, setLinesArray, currentCommand);
       break;
   }
 };
 
+const settings = (commandArray) => {};
 const error = (linesArray, setLinesArray, currentCommand) => {
   let tempLines = [...linesArray];
   tempLines.push({
