@@ -1,1 +1,1 @@
-export const commands = ["help", "clear", "amogus", "settings"];
+export const commands = ["help", "clear", "contic", "amogus", "settings"];

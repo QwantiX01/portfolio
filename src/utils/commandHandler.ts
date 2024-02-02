@@ -1,5 +1,6 @@
-import { log } from "console";
 import { PrintLines, PrintLine } from "./printLines.js";
+
+export const settingsData = { isAAC: false };
 
 const helpArray: string[] = [
   "Keys:",
@@ -57,7 +58,19 @@ const settings = (linesArray, setLinesArray, commandArray: string[]) => {
     argsArray.map(({ arg, value }) => {
       switch (arg) {
         case "aac":
-          value === "true" ? console.log(value) : console.log(value);
+          value === "true"
+            ? ((settingsData.isAAC = true),
+              PrintLine(
+                linesArray,
+                setLinesArray,
+                "AutoComplete on enter is enabled"
+              ))
+            : ((settingsData.isAAC = false),
+              PrintLine(
+                linesArray,
+                setLinesArray,
+                "AutoComplete on enter is disabled"
+              ));
           break;
         default:
           break;

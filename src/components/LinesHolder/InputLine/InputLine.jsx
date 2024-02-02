@@ -1,6 +1,6 @@
 import styles from "./InputLine.module.css";
 import { useRef, useState } from "react";
-import { handleCommand } from "../../../utils/commandHandler.ts";
+import { handleCommand, settingsData } from "../../../utils/commandHandler.ts";
 import { commands } from "../../../utils/misc.js";
 
 const InputLine = ({ linesArray, setLinesArray }) => {
@@ -18,6 +18,10 @@ const InputLine = ({ linesArray, setLinesArray }) => {
   try {
     autoCompleteFull = commands.toString().match(regex);
     autoComplete = autoCompleteFull[0].slice(autoCompleteFull[1].length);
+    if (autoCompleteFull[1] === "") {
+      autoCompleteFull = "";
+      autoComplete = "";
+    }
   } catch (e) {
     autoCompleteFull = "";
     autoComplete = "";
@@ -26,6 +30,13 @@ const InputLine = ({ linesArray, setLinesArray }) => {
   //Input command handler
   const sendLine = (e) => {
     if (!e.shiftKey && e.key === "Enter") {
+      if (settingsData.isAAC) {
+        inputRef.current.value =
+          autoCompleteFull[0] == null || ""
+            ? inputRef.current.value
+            : autoCompleteFull[0];
+        setInputValue(autoCompleteFull[0] == null ? "" : autoCompleteFull[0]);
+      }
       //Get value from input
       const value = inputRef.current.value;
       //Re-render lines and update array
@@ -37,7 +48,9 @@ const InputLine = ({ linesArray, setLinesArray }) => {
       handleCommand(linesArray, setLinesArray, value);
     } else if (e.shiftKey && e.key === "Enter") {
       inputRef.current.value =
-        autoCompleteFull[0] == null ? "" : autoCompleteFull[0];
+        autoCompleteFull[0] == null || ""
+          ? inputRef.current.value
+          : autoCompleteFull[0];
       setInputValue(autoCompleteFull[0] == null ? "" : autoCompleteFull[0]);
     }
   };
