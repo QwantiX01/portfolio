@@ -12,8 +12,8 @@ const LinesHolder = () => {
   return (
     <>
       <main>
-        {linesArray.map((value) => (
-          <Line key={Math.random()} {...value} />
+        {linesArray.map((value, index) => (
+          <Line key={index} {...value} />
         ))}
         <InputLine linesArray={linesArray} setLinesArray={setLinesArray} />
       </main>

@@ -1,6 +1,6 @@
 import styles from "./InputLine.module.css";
 import { useRef, useState } from "react";
-import { handleCommand } from "../../../utils/commandHandler.js";
+import { handleCommand } from "../../../utils/commandHandler.ts";
 import { commands } from "../../../utils/misc.js";
 
 const InputLine = ({ linesArray, setLinesArray }) => {
